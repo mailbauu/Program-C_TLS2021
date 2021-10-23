@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+
+string namabarang, selesai;
+int totalbarang, hari;
+double diskon=0.2, hasilakhir, subtotal, hargaasli;
+bool finish = false;
+
+void ngetes() {
+    cout << "Nama barang yang dibeli: ";
+    cin >> namabarang;
+    cout << "Berapa jumlah barang yang dibeli? ";
+    cin >> totalbarang;
+    cout << "Masukkan harga: ";
+    cin >> hargaasli;
+}
+int main() {
+    cout << "=====SELAMAT DATANG DI TOKO MAIL GANTENG======" << endl;
+    hasilakhir = 0;
+    cout << "Tanggal hari ini:  ";
+    cin >> hari;
+    if (0 < hari, 20 > hari) {
+        while (!finish) {
+            cout << "\n=====KASIR=====" << endl;
+            ngetes();
+            subtotal = hargaasli * totalbarang;
+            cout << "Harga dari " << namabarang << "mu adalah: " << subtotal << endl;
+
+            hasilakhir = hasilakhir + subtotal;
+            cout << "Selesai? (iya atau tidak) ";
+            cin >> selesai;
+            if (selesai == "iya") {
+                finish = true;
+                cout << "\nHarga Total: " << hasilakhir << endl;
+            }
+            else finish = false;
+
+        }
+    }
+    else if (20 <= hari, 31 > hari) {
+        cout << "\nHari ini ada diskon 20% untuk semua barang!" << endl;
+        while (!finish) {
+            cout << "\n=====KASIR=====" << endl;
+            ngetes();
+
+            subtotal = hargaasli * totalbarang * 0.8;
+            cout << "Harga dari " << namabarang << "mu adalah: " << subtotal << endl;
+
+            hasilakhir = hasilakhir + subtotal;
+            cout << "Selesai? (iya atau tidak)? ";
+            cin >> selesai;
+            if (selesai == "iya") {
+                finish = true;
+                cout << "\nHarga Total: " << hasilakhir << endl;
+            }
+            else finish = false;
+        }
+
+    }
+    else
+        cout << "error" << endl;
+
+    cout << "\n=====TERIMA KASIH=====";
+
+    return 0;
+}
